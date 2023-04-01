@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./ecomm/container/tsconfig.json",
+    },
+    {
+      "path": "./ecomm/products/tsconfig.app.json",
+    }
+  ]
+}

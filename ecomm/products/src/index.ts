@@ -9,3 +9,5 @@ for (let i = 0; i < 3; i++) {
 
 const rootDiv = document.querySelector("#dev-products");
 rootDiv.innerHTML = products;
+
+export { products };

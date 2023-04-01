@@ -19,7 +19,7 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    port: 3001,
+    port: 3002,
     devMiddleware: {
       writeToDisk: true,
     },
@@ -30,10 +30,10 @@ const config = {
       template: "./public/index.html",
     }),
     new ModuleFederationPlugin({
-      name: "products",
+      name: "cart",
       filename: "remoteEntry.js",
       exposes: {
-        "./ProductsIndex": "./src/index",
+        "./CartShow": "./src/index",
       },
     }),
 
