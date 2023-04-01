@@ -18,11 +18,12 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
+    port: 3000,
   },
   devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "./public/index.html",
     }),
 
     // Add your plugins here
