@@ -19,7 +19,10 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    port: 3000,
+    port: 3001,
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   devtool: "source-map",
   plugins: [

@@ -8,6 +8,6 @@
     "ecomm/*"
   ],
   "scripts": {
-    "serve": "concurrently \"cd ecomm/container && npm run serve\" \"cd ecomm/products && npm run serve\" "
+    "serve": "concurrently \"cd ecomm/container && npm run serve\" \"cd ecomm/products && npm run serve\" \"cd ecomm/cart && npm run serve\" "
   }
 }

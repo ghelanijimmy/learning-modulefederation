@@ -19,12 +19,10 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    port: 3000,
-    liveReload: true,
-    watchFiles: [
-      path.resolve(__dirname, "..", "products"),
-      path.resolve(__dirname, "..", "cart"),
-    ],
+    port: 3002,
+    devMiddleware: {
+      writeToDisk: true,
+    },
   },
   devtool: "source-map",
   plugins: [
@@ -32,10 +30,10 @@ const config = {
       template: "./public/index.html",
     }),
     new ModuleFederationPlugin({
-      name: "container",
-      remotes: {
-        products: "products@http://localhost:3001/remoteEntry.js",
-        cart: "cart@http://localhost:3002/remoteEntry.js",
+      name: "cart",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./CartShow": "./src/index",
       },
     }),
 
