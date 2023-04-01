@@ -19,7 +19,7 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-    port: 3000,
+    port: 3001,
   },
   devtool: "source-map",
   plugins: [
@@ -27,10 +27,9 @@ const config = {
       template: "./public/index.html",
     }),
     new ModuleFederationPlugin({
-      name: "products",
-      filename: "remoteEntry.js",
-      exposes: {
-        "./ProductsIndex": "./src/index",
+      name: "container",
+      remotes: {
+        products: "products@http://localhost:3000/remoteEntry.js",
       },
     }),
 
