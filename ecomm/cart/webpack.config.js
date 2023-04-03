@@ -4,8 +4,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const deps = require('./package.json').dependencies;
 
 const isProduction = process.env.NODE_ENV === "production";
+const isMF = JSON.parse(process.env.MF);
 
 const stylesHandler = isProduction
   ? MiniCssExtractPlugin.loader
@@ -17,7 +19,7 @@ const config = {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    open: true,
+    open: isMF !== true,
     host: "localhost",
     port: 3002,
     devMiddleware: {
@@ -33,7 +35,10 @@ const config = {
       name: "cart",
       filename: "remoteEntry.js",
       exposes: {
-        "./CartShow": "./src/index",
+        "./CartShow": "./src/bootstrap",
+      },
+      shared: {
+        ...deps,
       },
     }),
 

@@ -1,3 +1,6 @@
 declare module "products/ProductsIndex" {
-  const products: string;
+  const mount: (el: Element) => void;
+}
+declare module "cart/CartShow" {
+  const mount: (el: Element) => void;
 }

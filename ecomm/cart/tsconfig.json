@@ -11,8 +11,8 @@
     "declarationMap": true,
     "moduleResolution": "Node",
     "rootDir": ".",
-    "outDir": "dist"
+    "outDir": "dist",
+    "composite": true
   },
-  "files": ["src/index.ts"],
-  "include": ["src/**/*"],
+  "include": ["src/**/*"]
 }
