@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./container/tsconfig.json"
+    },
+    {
+      "path": "./products/tsconfig.json",
+    },
+
+    {
+      "path": "./cart/tsconfig.json",
+    }
+  ]
+}
